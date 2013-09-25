@@ -99,9 +99,9 @@ module CapBoardDecoder(clk,swIn,enable,tuningCode,boardOut);
 	//Process switch input to derive useful board address.
 	//Remember: addr is bitwise-inverted because a HIGH on the switch corresponds to
 	//the switch being in the OFF state.	
-	//addr=((~swInStable) - 1'b1)*numIDsPerBoard+1'b1;
+	addr=((~swInStable) - 1'b1)*numIDsPerBoard+1'b1;
 	//addr=3'b101; //Lock for Board #2 to see if this fixes trip.
-	addr=1'b1; //Lock for Board #1 to see if this fixes trip in Board #1.
+	//addr=1'b1; //Lock for Board #1 to see if this fixes trip in Board #1.
  end
  
  //Set board state output from register to net (wires).
